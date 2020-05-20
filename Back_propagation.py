@@ -1,8 +1,11 @@
 import numpy as np
+import matplotlib.pyplot as plt
+import torch
 
+losses = []
 # N is batch size; D_in is input dimension;
 # H is hidden dimension; D_out is output dimension.
-N, D_in, H, D_out = 64, 1000, 100, 10
+N, D_in, H, D_out = 64, 10, 100, 100
 
 # Create random input and output data
 x = np.random.randn(N, D_in)
@@ -22,6 +25,7 @@ for t in range(500):
     # Compute and print loss
     loss = np.square(y_pred - y).sum()
     print(t, loss)
+    losses.append(loss)
 
     # Backprop to compute gradients of w1 and w2 with respect to loss
     grad_y_pred = 2.0 * (y_pred - y)
@@ -34,3 +38,5 @@ for t in range(500):
     # Update weights
     w1 -= learning_rate * grad_w1
     w2 -= learning_rate * grad_w2
+plt.plot(losses)
+plt.show()
