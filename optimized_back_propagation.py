@@ -3,7 +3,7 @@ import torch
 
 # N is batch size; D_in is input dimension;
 # H is hidden dimension; D_out is output dimension.
-N, D_in, H, D_out = 64, 1000, 100, 10
+N, D_in, H, D_out = 64, 1000, 10, 10
 
 # Create random Tensors to hold inputs and outputs
 x = torch.randn(N, D_in)
@@ -21,7 +21,7 @@ loss_fn = torch.nn.MSELoss(reduction='sum')
 # the model for us. Here we will use Adam; the optim package contains many other
 # optimization algorithms. The first argument to the Adam constructor tells the
 # optimizer which Tensors it should update.
-learning_rate = 1e-4
+learning_rate = 1
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 for t in range(500):
     # Forward pass: compute predicted y by passing x to the model.
