@@ -16,6 +16,7 @@ w1 = np.random.randn(D_in, H)
 w2 = np.random.randn(H, D_out)
 
 learning_rate = 1e-6
+
 for t in range(500):
     # Forward pass: compute predicted y
     h = x.dot(w1)
