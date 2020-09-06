@@ -37,6 +37,7 @@ for t in range(500):
     if t % 100 == 99:
         print(t, loss.item())
 
+        
     # Use autograd to compute the backward pass. This call will compute the
     # gradient of loss with respect to all Tensors with requires_grad=True.
     # After this call w1.grad and w2.grad will be Tensors holding the gradient
