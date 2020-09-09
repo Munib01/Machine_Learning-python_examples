@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch
 
+
 losses = []
 # N is batch size; D_in is input dimension;
 # H is hidden dimension; D_out is output dimension.
